@@ -5,8 +5,13 @@ class CompRacket
     @x = 325
     @y = 10
 
+    @frame = 0
+
     @width = 50
     @height = 10
+
+    @speed = 2
+    @frame = 0
   end
 
   def ball_coord(x)
@@ -14,9 +19,20 @@ class CompRacket
   end
 
   def update
-    if @x != @ball_x - 25
-      @x = @ball_x - 25
+    if @x + @width < @ball_x
+      @x += @speed
+      if @ball_x - (@x + @width) > 50
+        @speed += 1
+      end
+    elsif @x > @ball_x
+      @x -= @speed
+      if @x - @ball_x > 50
+        @speed += 1
+      end
+    else
+      @speed = 0
     end
+
   end
 
   def draw

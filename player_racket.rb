@@ -5,15 +5,15 @@ class PlayerRacket
     @x = 0
     @y = 480
 
-    @width = 100
+    @width = 50
     @height = 10
   end
 
   def set_x(x)
     if x <= 150
       @x = 150
-    elsif x >= 450
-      @x = 450
+    elsif x >= 550 - @width
+      @x = 550 - @width
     else
       @x = x
     end

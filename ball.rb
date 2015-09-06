@@ -7,7 +7,7 @@ class Ball
     @x = 350
     @y = 50
     @speed_x = 2
-    @speed_y = 3
+    @speed_y = 5
   end
 
   def update_speed_y(speed_y)
@@ -21,9 +21,6 @@ class Ball
     if @x <= 150 || @x >= 540
       @speed_x = -@speed_x
     end
-   # if @y <= 0
-   #   @speed_y = -@speed_y
-   # end
   end
 
   def draw

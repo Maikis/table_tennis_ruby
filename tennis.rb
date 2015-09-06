@@ -24,7 +24,7 @@ class GameWindow < Gosu::Window
     pl_y = @pl_racket.y
     pl_width = @pl_racket.width
 
-    if @ball_y + 10 >= pl_y
+    if (@ball_y + 10 >= pl_y) && (@ball_y + 10 <= pl_y + 10)
       if (@ball_x <= pl_x + pl_width) && (@ball_x >= pl_x)
         @ball.speed_y = -@ball.speed_y
       end
@@ -42,7 +42,7 @@ class GameWindow < Gosu::Window
     comp_x = @comp_racket.x
     comp_y = @comp_racket.y
 
-    if @ball_y - 10 <= comp_y
+    if (@ball_y - 10 <= comp_y + 10) && (@ball_y - 10 >= comp_y)
       if (@ball_x <= comp_x + 50) && (@ball_x >= comp_x)
         @ball.speed_y = -@ball.speed_y
       end
