@@ -77,6 +77,13 @@ class GameWindow < Gosu::Window
     hit_comp
     
     @ball.update
+
+    if @score.pl_score == 5
+      @score.lvl_up
+      @ball.speed_y += 1
+    elsif @score.comp_score == 5
+      @score.reset_lvl
+    end
   end
 
   def draw

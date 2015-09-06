@@ -7,7 +7,7 @@ class Ball
     @x = 350
     @y = 50
     @speed_x = 2
-    @speed_y = 5
+    @speed_y = 2
   end
 
   def update_speed_y(speed_y)
